@@ -1,7 +1,6 @@
 # Youtube to Spotify Playlist
-> Short blurb about what your product does.
 
-[![Spotipy]][Spotipy-url]
+[![Spotipy][(https://spotipy.readthedocs.io/en/latest/?badge=latest)][(https://spotipy.readthedocs.io/en/2.19.0/#)]
 
 Export a Youtube playlist to a Spotify playlist
 
@@ -53,3 +52,4 @@ Playlist name: My Playlist
 ```
 
 ## Thank you for reading
+
