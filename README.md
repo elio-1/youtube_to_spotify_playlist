@@ -1,6 +1,6 @@
 # Youtube to Spotify Playlist
 
-[![Spotipy][(https://spotipy.readthedocs.io/en/latest/?badge=latest)][(https://spotipy.readthedocs.io/en/2.19.0/#)]
+[![Spotipy](https://spotipy.readthedocs.io/en/latest/?badge=latest)][(https://spotipy.readthedocs.io/en/2.19.0/#)]
 
 Export a Youtube playlist to a Spotify playlist
 
