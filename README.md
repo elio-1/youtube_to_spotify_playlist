@@ -1,11 +1,11 @@
 # Youtube to Spotify Playlist
 
-[![Spotipy](https://spotipy.readthedocs.io/en/latest/?badge=latest)][(https://spotipy.readthedocs.io/en/2.19.0/#)]
 
 Export a Youtube playlist to a Spotify playlist
 
 ## Installation
 
+This program uses Spotipy (https://github.com/spotipy-dev/spotipy/tree/2.19.0) and google api (https://developers.google.com/apis-explorer/)
 
 ```sh
 pip install spotipy --upgrade
@@ -14,6 +14,7 @@ pip install --upgrade google-api-python-client
 
 You're going to need a SPOTIPY_CLIENT_ID, a SPOTIPY_CLIENT_SECRET and a youtube api key
 In the program I used a reference to another file containing the keys so that I didn't had to put them for the world to see and so I didn't had to set up environnement variable everytime.
+
 
 ```python
 sp = spotipy.Spotify(
@@ -50,6 +51,3 @@ For exemple:
 Youtube Playlist link: https://www.youtube.com/playlist?list=PLUPHnZCcc6vnJiWOT3DNVA4Uj_VMXWP9T
 Playlist name: My Playlist
 ```
-
-## Thank you for reading
-
