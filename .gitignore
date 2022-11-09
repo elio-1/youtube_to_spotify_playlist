@@ -1,0 +1,7 @@
+.cache
+/__pycache__
+*.pytest
+*.env
+env.py
+/env.py
+yt_url.py
