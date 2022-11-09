@@ -13,8 +13,8 @@ class Sp:
     except spotipy.oauth2.SpotifyOauthError:
         sp = spotipy.Spotify(
             auth_manager=SpotifyOAuth(
-                client_id=env.Env.spotipy_client_id,
-                client_secret=env.Env.spotipy_client_secret,
+                client_id=env.Env.spotipy_client_id, # CHANGE THIS with your SPOTIPY_CLIENT_ID
+                client_secret=env.Env.spotipy_client_secret, # CHANGE THIS with your SPOTIPY_CLIENT_SECRET
                 redirect_uri="https://localhost:8888/callback",
                 scope=scope,
             )
@@ -54,7 +54,7 @@ def main():
 
 
 def user_playlist_link():
-    url = input('Youtube Playlist link:')
+    url = input('Youtube Playlist link: ')
     match = re.search(
     # r"(?:http:|https:)*?\/\/(?:www\.|)(?:youtube\.com|m\.youtube\.com|youtu\.|youtube-nocookie\.com).*(?:v=|v%3D|v\/|(?:a|p)\/(?:a|u)\/\d.*\/|watch\?|vi(?:=|\/)|\/embed\/|oembed\?|be\/|e\/)([^&?%#\/\n]*)", # credit: https://github.com/rodrigoborgesdeoliveira
     r"(?:http:|https:)*?\/\/(?:www\.|)(?:youtube\.com|m\.youtube\.com|youtu\.|youtube-nocookie\.com).*(?:list=|v%3D|v\/|(?:a|p)\/(?:a|u)\/\d.*\/|list\?|vi(?:=|\/)|\/embed\/|oembed\?|be\/|e\/)([^&?%#\/\n]*)",
@@ -70,7 +70,7 @@ def ask_user_playlist_name():
 def list_of_playlist(playlist_id):
     api_service_name = "youtube"
     api_version = "v3"
-    DEVELOPER_KEY = env.Env.youtube_api_key
+    DEVELOPER_KEY = env.Env.youtube_api_key # CHANGE THIS with your youtube api key
 
     youtube = googleapiclient.discovery.build(
         api_service_name, api_version, developerKey=DEVELOPER_KEY
