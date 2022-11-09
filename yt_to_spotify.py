@@ -1,10 +1,13 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+import env
 
 
 class Sp:
     scope = "playlist-modify-public"
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+        client_id=env.Env.spotipy_client_id, client_secret=env.Env.spotipy_client_secret, redirect_uri="https://localhost:8888/callback",scope=scope
+        ))
 
     @classmethod
     def create_playlist(cls, name):
@@ -31,19 +34,7 @@ class Sp:
 
 
 def main():
-    search_list=[]
-    while True:
-        user_input = str(input('Search for songs: '))
-        if user_input == '-stop':
-            break
-        search_list.append(user_input)
-        esign = '=' * 8
-        print('\n' + esign + "Song added to the list" + esign)
-        print(esign + 'Current list:' + esign)
-        for item in search_list:
-            print(item)
-        print('\ntype "-stop" to end the list\n')
-        
+    search_list = manual_input_search()     
     Sp.create_playlist("test playlist")
     tracks = []
     for song in search_list:
@@ -51,8 +42,22 @@ def main():
     Sp.add_songs(tracks)
 
 
+def manual_input_search():
+    search_list=[]
+    while True:
+        user_input = str(input('Search for songs: '))
+        if user_input == '-stop':
+            break
+        search_list.append(user_input)
+        esign = '=' * 8
+        blank = ' ' * 4
+        print('\n' + esign + blank + "Song added to the list" + blank + esign)
+        print(esign + blank + 'Current list:' + blank + esign + '\n')
+        for item in search_list:
+            print(item)
+        print('\ntype "-stop" to end the list\n')
+    return search_list
 
 
 if __name__ == "__main__":
     main()
-
